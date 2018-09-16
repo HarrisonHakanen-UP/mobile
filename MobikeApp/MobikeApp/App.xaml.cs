@@ -1,6 +1,5 @@
 ﻿using Prism;
 using Prism.Ioc;
-using MobikeApp.ViewModels;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
@@ -8,6 +7,7 @@ using MobikeApp.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Prism.DryIoc;
+using Prism.Navigation;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MobikeApp
@@ -21,9 +21,9 @@ namespace MobikeApp
          */
         public App() : this(null) { }
 
-        public App(IPlatformInitializer initializer) : base(initializer) { }
+        public App(IPlatformInitializer initializer = null) : base(initializer) { }
 
-        protected override async void OnInitialized()
+        protected override void OnInitialized()
         {
             AppCenter.Start("android=c181f1ac-ea8d-48eb-baf6-4fc3dfa9e57d;" + 
                 "uwp={Your UWP App secret here};" + 
@@ -31,13 +31,17 @@ namespace MobikeApp
                 typeof(Analytics), typeof(Crashes));
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            //Login objLogin = new Login(new UsuarioDetalhes() { Codigo = DependencyService.Get<ICredentialsService>().Code, Email = DependencyService.Get<ICredentialsService>().Email, Nome = DependencyService.Get<ICredentialsService>().UserName }, DependencyService.Get<ICredentialsService>().Token);
+
+             NavigationService.NavigateAsync("LoginPage", null, true, true);
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage>();
+            containerRegistry.RegisterForNavigation<ChangePasswordPage>();
+            containerRegistry.RegisterForNavigation<AppMasterDetailPage>();
         }
     }
 }

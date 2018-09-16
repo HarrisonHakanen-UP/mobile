@@ -2,12 +2,11 @@
 
 namespace MobikeApp.Views
 {
-    public partial class MainPage : ContentPage
+    public partial class AppMasterDetailPage : MasterDetailPage
     {
-        public MainPage()
+        public AppMasterDetailPage()
         {
             InitializeComponent();
         }
     }
 }
-
