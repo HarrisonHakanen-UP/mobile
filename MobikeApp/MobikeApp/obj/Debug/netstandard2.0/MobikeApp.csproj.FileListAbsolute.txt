@@ -1,0 +1,8 @@
+C:\XZTech\mobikeApp\MobikeApp\MobikeApp\bin\Debug\netstandard2.0\MobikeApp.deps.json
+C:\XZTech\mobikeApp\MobikeApp\MobikeApp\bin\Debug\netstandard2.0\MobikeApp.dll
+C:\XZTech\mobikeApp\MobikeApp\MobikeApp\obj\Debug\netstandard2.0\MobikeApp.csprojAssemblyReference.cache
+C:\XZTech\mobikeApp\MobikeApp\MobikeApp\obj\Debug\netstandard2.0\MobikeApp.csproj.CoreCompileInputs.cache
+C:\XZTech\mobikeApp\MobikeApp\MobikeApp\obj\Debug\netstandard2.0\MobikeApp.App.xaml.g.cs
+C:\XZTech\mobikeApp\MobikeApp\MobikeApp\obj\Debug\netstandard2.0\MobikeApp.Views.MainPage.xaml.g.cs
+C:\XZTech\mobikeApp\MobikeApp\MobikeApp\obj\Debug\netstandard2.0\MobikeApp.AssemblyInfoInputs.cache
+C:\XZTech\mobikeApp\MobikeApp\MobikeApp\obj\Debug\netstandard2.0\MobikeApp.AssemblyInfo.cs
