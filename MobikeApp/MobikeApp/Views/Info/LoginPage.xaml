@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns:local="clr-namespace:MobikeApp;assembly=MobikeApp" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="True" x:Class="MobikeApp.Views.LoginPage" Title="{Binding Title}">
+	<ScrollView>
+		<Grid RowSpacing="8" ColumnSpacing="8">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<!-- header -->
+			<StackLayout Grid.Row="0" Padding="0" Spacing="0" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+				<StackLayout>
+					<StackLayout.Spacing>
+						<OnPlatform x:TypeArguments="x:Double" Android="12" iOS="30" WinPhone="12" />
+					</StackLayout.Spacing>
+					<StackLayout.Padding>
+						<OnPlatform x:TypeArguments="Thickness" Android="32,24,32,24" iOS="16,24,16,24" WinPhone="32,24" />
+					</StackLayout.Padding>
+				</StackLayout>
+			</StackLayout>
+			<!-- body -->
+			<StackLayout Grid.Row="1" VerticalOptions="Center" Orientation="Vertical">
+				<StackLayout.Padding>
+					<OnPlatform x:TypeArguments="Thickness" Android="32,0" iOS="32,0" WinPhone="32,0" />
+				</StackLayout.Padding>
+				<StackLayout.Spacing>
+					<OnPlatform x:TypeArguments="x:Double" Android="8" iOS="16" WinPhone="10" />
+				</StackLayout.Spacing>
+				<StackLayout Padding="32" Spacing="0">
+					<Image WidthRequest="160" MinimumWidthRequest="130" Source="ic_bike_logo.png">
+						
+					</Image>
+                    <Label Text="MoBikeApp" HorizontalOptions="CenterAndExpand" FontAttributes="Italic, Bold" FontSize="Large" TextColor="Black"/>
+				</StackLayout>
+				<Entry Text="{Binding Cpf}" FontSize="14" Keyboard="Text" HeightRequest="46" HorizontalOptions="FillAndExpand" Placeholder="Login">
+					<Entry.TextColor>
+						<OnPlatform x:TypeArguments="Color">
+							<OnPlatform.iOS>#757575</OnPlatform.iOS>
+							<OnPlatform.Android>#757575</OnPlatform.Android>
+						</OnPlatform>
+					</Entry.TextColor>
+					<Entry.PlaceholderColor>
+						<OnPlatform x:TypeArguments="Color">
+							<OnPlatform.iOS>#757575</OnPlatform.iOS>
+							<OnPlatform.Android>#757575</OnPlatform.Android>
+						</OnPlatform>
+					</Entry.PlaceholderColor>
+				</Entry>
+				<Entry Text="{Binding Password}" FontSize="14" HorizontalOptions="FillAndExpand" IsPassword="true" Placeholder="Senha" HeightRequest="46">
+					<Entry.TextColor>
+						<OnPlatform x:TypeArguments="Color">
+							<OnPlatform.iOS>#757575</OnPlatform.iOS>
+							<OnPlatform.Android>#757575</OnPlatform.Android>
+						</OnPlatform>
+					</Entry.TextColor>
+					<Entry.PlaceholderColor>
+						<OnPlatform x:TypeArguments="Color">
+							<OnPlatform.iOS>#757575</OnPlatform.iOS>
+							<OnPlatform.Android>#757575</OnPlatform.Android>
+						</OnPlatform>
+					</Entry.PlaceholderColor>
+				</Entry>
+				<Button Text="Entrar" Command="{Binding LoginCommand}" HorizontalOptions="FillAndExpand" TextColor="White" HeightRequest="46" BackgroundColor="#0288D1">
+					<Button.FontAttributes>
+						<OnPlatform x:TypeArguments="FontAttributes" iOS="Bold" />
+					</Button.FontAttributes>
+				</Button>
+			</StackLayout>
+			<!-- footer -->
+			<StackLayout Grid.Row="2" HorizontalOptions="StartAndExpand" Orientation="Vertical" Padding="16,16,16,16" Spacing="4">
+				<StackLayout.Padding>
+					<OnPlatform x:TypeArguments="Thickness" Android="32" iOS="32" WinPhone="32,0" />
+				</StackLayout.Padding>
+				<StackLayout.Spacing>
+					<OnPlatform x:TypeArguments="x:Double" Android="16" iOS="16" WinPhone="10" />
+				</StackLayout.Spacing>
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
+					<Label Grid.Row="0" Grid.Column="0" FontSize="Small" Text="Recuperar a senha" TextColor="#0288D1">
+						<Label.GestureRecognizers>
+							<TapGestureRecognizer Command="{Binding PasswordRecoveryCommand}" />
+						</Label.GestureRecognizers>
+					</Label>
+					<Label Grid.Row="0" Grid.Column="1" FontSize="Small" Text="Solicitar acesso" TextColor="#0288D1">
+						<Label.GestureRecognizers>
+							<TapGestureRecognizer Command="{Binding RequestAccessCommand}" />
+						</Label.GestureRecognizers>
+					</Label>
+				</Grid>
+			</StackLayout>
+			<StackLayout Grid.Row="3" HorizontalOptions="CenterAndExpand" Orientation="Vertical" Padding="16,16,16,16" Spacing="4">
+                <StackLayout.Padding>
+                    <OnPlatform x:TypeArguments="Thickness" Android="32" iOS="32" WinPhone="32,0" />
+                </StackLayout.Padding>
+                <StackLayout.Spacing>
+                    <OnPlatform x:TypeArguments="x:Double" Android="16" iOS="16" WinPhone="10" />
+                </StackLayout.Spacing>
+				<Label Text="{Binding AppVersion}" HorizontalOptions="CenterAndExpand" FontSize="11" TextColor="#AAAAAA"  />
+			</StackLayout>
+		</Grid>
+	</ScrollView>
+</ContentPage>
