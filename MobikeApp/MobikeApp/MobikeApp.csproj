@@ -61,8 +61,5 @@
     <Folder Include="ViewModels\Produto\" />
     <Folder Include="Models\" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Remove="Views\Produto\ItemDetailPage.xaml" />
-    <EmbeddedResource Remove="Views\Produto\ItemsPage.xaml" />
-  </ItemGroup>
+  
 </Project>
