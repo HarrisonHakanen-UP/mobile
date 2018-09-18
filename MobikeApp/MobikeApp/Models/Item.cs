@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mobike.Models
+namespace MobikeApp.Models
 {
     public class Item
     {
