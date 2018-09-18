@@ -23,6 +23,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Produto\ItemDetailPage.xaml" />
+    <None Include="Views\Produto\ItemsPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
     <None Update="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
@@ -52,4 +56,13 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Produto\" />
+    <Folder Include="ViewModels\Produto\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\Produto\ItemDetailPage.xaml" />
+    <EmbeddedResource Remove="Views\Produto\ItemsPage.xaml" />
+  </ItemGroup>
 </Project>
