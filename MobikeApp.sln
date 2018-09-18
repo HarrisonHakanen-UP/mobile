@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobikeApp.Android", "Mobike
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobikeApp.iOS", "MobikeApp\MobikeApp.iOS\MobikeApp.iOS.csproj", "{1F2426A0-A763-42EC-A0C6-68806C7CA222}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestClient", "MobikeService\RestClient.csproj", "{E2F9E334-986B-4CE4-AAA8-4C71120ECE72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestClient", "MobikeService\RestClient.csproj", "{E2F9E334-986B-4CE4-AAA8-4C71120ECE72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

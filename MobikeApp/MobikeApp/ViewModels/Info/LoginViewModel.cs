@@ -3,7 +3,7 @@ using Prism.Navigation;
 using Prism.Services;
 using Plugin.Connectivity;
 using Acr.UserDialogs;
-using MobikeApp.Services;
+//using MobikeApp.Services;
 using System.Collections.Generic;
 
 namespace MobikeApp.ViewModels
@@ -52,15 +52,15 @@ namespace MobikeApp.ViewModels
            // LoginCommand = new DelegateCommand(ExecuteDoLogin, CanNavigate).ObservesProperty(() => IsBusy);
             RequestAccessCommand = new DelegateCommand(async () => await _navigationService.NavigateAsync("RequestAccessPage", null, true, true));
             PasswordRecoveryCommand = new DelegateCommand(async () => await _navigationService.NavigateAsync("PasswordRecoveryPage", null, true, true));
-            AppVersion = $"Versão {GetVersion()}";
+          //  AppVersion = $"Versão {GetVersion()}";
 
 //            storeService = Xamarin.Forms.DependencyService.Get<ICredentialsService>();
         }
 
-        private static string GetVersion()
-        {
-            return Xamarin.Forms.DependencyService.Get<IAppVersionService>().GetVersion();
-        }
+        //private static string GetVersion()
+        //{
+        //    //return Xamarin.Forms.DependencyService.Get<IAppVersionService>().GetVersion();
+        //}
 
         //private async void ExecuteDoLogin()
         //{

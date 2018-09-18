@@ -21,13 +21,13 @@ namespace MobikeApp
          */
         public App() : this(null) { }
 
-        public App(IPlatformInitializer initializer = null) : base(initializer) { }
+        public App(IPlatformInitializer initializer) : base(initializer) { }
 
         protected override void OnInitialized()
         {
             AppCenter.Start("android=c181f1ac-ea8d-48eb-baf6-4fc3dfa9e57d;" + 
-                "uwp={Your UWP App secret here};" + 
-                "ios={Your iOS App secret here}", 
+                "uwp={Your UWP App secret here};" +
+                "ios={a38e18f3-e5f4-431e-a7ba-146b7bb33f1e}", 
                 typeof(Analytics), typeof(Crashes));
             InitializeComponent();
 
@@ -40,6 +40,7 @@ namespace MobikeApp
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage>();
+            containerRegistry.RegisterForNavigation<LoginPage>();
             containerRegistry.RegisterForNavigation<ChangePasswordPage>();
             containerRegistry.RegisterForNavigation<AppMasterDetailPage>();
         }
