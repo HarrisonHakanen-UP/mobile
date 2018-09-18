@@ -5,6 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Views\Produto\DetalhesProdutoPage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Produto\DetalhesProdutoPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="7.0.1" />
     <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
     <PackageReference Include="Microsoft.AppCenter.Analytics" Version="1.9.0" />
@@ -57,9 +67,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Produto\" />
     <Folder Include="ViewModels\Produto\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\Produto\DetalhesProdutoPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
  
 </Project>
