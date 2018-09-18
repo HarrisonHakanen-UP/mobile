@@ -3,7 +3,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using Mobike.Models;
+using MobikeApp.Models;
 using Mobike.ViewModels;
 
 namespace MobikeApp.Views

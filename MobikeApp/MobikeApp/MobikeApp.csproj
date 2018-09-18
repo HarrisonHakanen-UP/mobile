@@ -61,5 +61,5 @@
     <Folder Include="ViewModels\Produto\" />
     <Folder Include="Models\" />
   </ItemGroup>
-  
+
 </Project>
