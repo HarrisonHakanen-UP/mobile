@@ -1,10 +1,10 @@
 ﻿using System;
 
-using MobikeApp.Mdels;
+using MobikeApp.Models;
 
 namespace MobikeApp.ViewModels
 {
-    public class ItemDetailViewModel : BaseViewModel
+    public class ItemDetailViewModel : ViewModelBase
     {
         public Item Item { get; set; }
         public ItemDetailViewModel(Item item)
