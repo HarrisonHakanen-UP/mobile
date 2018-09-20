@@ -57,25 +57,25 @@ namespace MobikeApp.ViewModels
 
         }
 
-        public void ShowLoading(string message, MaskType? masktype = default(MaskType?))
-        {
-            UserDialogs.Instance.ShowLoading(message, masktype);
-        }
-        public void ShowToast(ToastConfig options)
-        {
-            UserDialogs.Instance.Toast(options);
-        }
-        public Task ShowAlert(AlertConfig options)
-        {
-            var result = UserDialogs.Instance.AlertAsync(options);
+        //public void ShowLoading(string message, MaskType? masktype = default(MaskType?))
+        //{
+        //    UserDialogs.Instance.ShowLoading(message, masktype);
+        //}
+        //public void ShowToast(ToastConfig options)
+        //{
+        //    UserDialogs.Instance.Toast(options);
+        //}
+        //public Task ShowAlert(AlertConfig options)
+        //{
+        //    var result = UserDialogs.Instance.AlertAsync(options);
 
-            return result;
-        }
+        //    return result;
+        //}
 
 
-        public void HideLoading()
-        {
-            UserDialogs.Instance.HideLoading();
-        }
+        //public void HideLoading()
+        //{
+        //    UserDialogs.Instance.HideLoading();
+        //}
     }
 }
