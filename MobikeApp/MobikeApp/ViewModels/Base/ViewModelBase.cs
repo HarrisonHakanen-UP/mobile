@@ -1,4 +1,6 @@
 ﻿using Acr.UserDialogs;
+using MobikeApp.Models;
+using MobikeApp.Services;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -6,12 +8,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace MobikeApp.ViewModels
 {
     public class ViewModelBase : BindableBase, INavigationAware
     {
-
+       // public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
         private string _title;
         public string Title
         {
@@ -27,7 +30,7 @@ namespace MobikeApp.ViewModels
 
         public ViewModelBase(string title = "")
         {
-            _title = title;
+            
         }
         public virtual bool CanNavigate()
         {

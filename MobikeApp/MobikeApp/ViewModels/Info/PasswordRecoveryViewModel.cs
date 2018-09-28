@@ -19,7 +19,7 @@ namespace MobikeApp.ViewModels
         public DelegateCommand CancelCommand { get; set; }
         public DelegateCommand RecoverPasswordCommand { get; set; }
 
-        public PasswordRecoveryViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base("Recuperar senha")
+        public PasswordRecoveryViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base("Recuperar Senha")
         {
             _navigationService = navigationService;
             _pageDialogService = pageDialogService;

@@ -39,7 +39,7 @@ namespace MobikeApp.ViewModels
             _navigationService = navigationService;
             _pageDialogService = pageDialogService;
             CancelCommand = new DelegateCommand(async () => await _navigationService.NavigateAsync("LoginPage", null, true, true));
-           // RequestAccessCommand = new DelegateCommand(ExecuteRequestAccessCommand);
+            //RequestAccessCommand = new DelegateCommand(ExecuteRequestAccessCommand);
         }
 
         //public async void ExecuteRequestAccessCommand()

@@ -16,21 +16,17 @@
 			<StackLayout Grid.Row="0" Padding="0" Spacing="0" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
 				<StackLayout>
 					<StackLayout.Spacing>
-						<OnPlatform x:TypeArguments="x:Double" Android="12" iOS="30" WinPhone="12" />
+						<OnPlatform x:TypeArguments="x:Double" Android="12" iOS="30"  />
 					</StackLayout.Spacing>
 					<StackLayout.Padding>
-						<OnPlatform x:TypeArguments="Thickness" Android="32,24,32,24" iOS="16,24,16,24" WinPhone="32,24" />
+						<OnPlatform x:TypeArguments="Thickness" Android="32,24,32,24" iOS="16,24,16,24"  />
 					</StackLayout.Padding>
 				</StackLayout>
 			</StackLayout>
 			<!-- body -->
 			<StackLayout Grid.Row="1" VerticalOptions="Center" Orientation="Vertical" Padding="16,16,16,16" Spacing="4">
-				<StackLayout.Padding>
-					<OnPlatform x:TypeArguments="Thickness" Android="32,0" iOS="32,0" WinPhone="32,0" />
-				</StackLayout.Padding>
-				<StackLayout.Spacing>
-					<OnPlatform x:TypeArguments="x:Double" Android="8" iOS="16" WinPhone="10" />
-				</StackLayout.Spacing>
+				
+				
 				<StackLayout Padding="32" Spacing="0">
 					<Image WidthRequest="160" MinimumWidthRequest="130" Source="ic_bike_logo.png">
 						
@@ -52,13 +48,8 @@
 				</Button>
 			</StackLayout>
 			<!-- footer -->
-			<StackLayout Grid.Row="2" HorizontalOptions="StartAndExpand" Orientation="Vertical" Padding="16,16,16,16" Spacing="4">
-				<StackLayout.Padding>
-					<OnPlatform x:TypeArguments="Thickness" Android="32" iOS="32" WinPhone="32,0" />
-				</StackLayout.Padding>
-				<StackLayout.Spacing>
-					<OnPlatform x:TypeArguments="x:Double" Android="16" iOS="16" WinPhone="10" />
-				</StackLayout.Spacing>
+			<StackLayout Grid.Row="2" HorizontalOptions="StartAndExpand" Orientation="Vertical">
+				
 				<Grid>
 					<Grid.RowDefinitions>
 						<RowDefinition Height="Auto" />

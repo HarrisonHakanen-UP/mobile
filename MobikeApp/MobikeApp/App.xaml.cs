@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Prism.DryIoc;
 using Prism.Navigation;
+using MobikeApp.ViewModels;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MobikeApp
@@ -33,16 +34,18 @@ namespace MobikeApp
 
             //Login objLogin = new Login(new UsuarioDetalhes() { Codigo = DependencyService.Get<ICredentialsService>().Code, Email = DependencyService.Get<ICredentialsService>().Email, Nome = DependencyService.Get<ICredentialsService>().UserName }, DependencyService.Get<ICredentialsService>().Token);
 
-             NavigationService.NavigateAsync("LoginPage", null, true, true);
+             NavigationService.NavigateAsync("ChangePasswordPage", null, true, true);
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainPage>();
-            containerRegistry.RegisterForNavigation<LoginPage>();
-            containerRegistry.RegisterForNavigation<ChangePasswordPage>();
-            containerRegistry.RegisterForNavigation<AppMasterDetailPage>();
+            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<LoginPage, LoginViewModel>();
+            containerRegistry.RegisterForNavigation<ChangePasswordPage, ChangePasswordPage>();
+            containerRegistry.RegisterForNavigation<AppMasterDetailPage, AppMasterDetailPageViewModel>();
+            containerRegistry.RegisterForNavigation<ItemsPage, ItemsViewModel>();
+
         }
     }
 }
