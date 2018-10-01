@@ -35,7 +35,7 @@ namespace MobikeApp.ViewModels
 
         public ChangePasswordViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base("Alterar senha")
         {
-            IsBusy = false;
+            //IsBusy = false;
 
             _navigationService = navigationService;
             _pageDialogService = pageDialogService;

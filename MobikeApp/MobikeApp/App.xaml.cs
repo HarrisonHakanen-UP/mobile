@@ -32,9 +32,8 @@ namespace MobikeApp
                 typeof(Analytics), typeof(Crashes));
             InitializeComponent();
 
-            //Login objLogin = new Login(new UsuarioDetalhes() { Codigo = DependencyService.Get<ICredentialsService>().Code, Email = DependencyService.Get<ICredentialsService>().Email, Nome = DependencyService.Get<ICredentialsService>().UserName }, DependencyService.Get<ICredentialsService>().Token);
 
-             NavigationService.NavigateAsync("ChangePasswordPage", null, true, true);
+             NavigationService.NavigateAsync("PasswordRecoveryPage", null, true, true);
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -42,7 +41,9 @@ namespace MobikeApp
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginViewModel>();
-            containerRegistry.RegisterForNavigation<ChangePasswordPage, ChangePasswordPage>();
+            containerRegistry.RegisterForNavigation<ChangePasswordPage, ChangePasswordViewModel>();
+            containerRegistry.RegisterForNavigation<PasswordRecoveryPage, PasswordRecoveryViewModel>();
+            containerRegistry.RegisterForNavigation<RequestAccessPage, RequestAccessViewModel>();
             containerRegistry.RegisterForNavigation<AppMasterDetailPage, AppMasterDetailPageViewModel>();
             containerRegistry.RegisterForNavigation<ItemsPage, ItemsViewModel>();
 

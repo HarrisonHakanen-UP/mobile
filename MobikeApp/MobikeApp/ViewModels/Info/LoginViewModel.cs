@@ -47,20 +47,14 @@ namespace MobikeApp.ViewModels
 
             LoginCommand = new DelegateCommand(ExecuteDoLogin, CanNavigate).ObservesProperty(() => IsBusy);
             RequestAccessCommand = new DelegateCommand(async () => await _navigationService.NavigateAsync("RequestAccessPage", null, true, true));
-            PasswordRecoveryCommand = new DelegateCommand(async () => await _navigationService.NavigateAsync("PasswordRecoveryPage", null, true, true));
-            //  AppVersion = $"Versão {GetVersion()}";
-
-            //            storeService = Xamarin.Forms.DependencyService.Get<ICredentialsService>();
+          
         }
 
-        
+
 
         private async void ExecuteDoLogin()
         {
-            
-
-            await _navigationService.NavigateAsync("MainPage", null,true,true);
-           
+            await _navigationService.NavigateAsync("MainPage", null, true, true);
         }
     }
 }
