@@ -62,4 +62,8 @@
     <Folder Include="Models\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\MobikeService\RestClient.csproj" />
+  </ItemGroup>
+
 </Project>

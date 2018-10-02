@@ -8,18 +8,22 @@ using Xamarin.Forms;
 using MobikeApp.ViewModels;
 using MobikeApp.Views;
 using MobikeApp.Models;
+using RestClient.Services;
+using Prism.Navigation;
 
 namespace MobikeApp.ViewModels
 {
     public class ItemsViewModel : ViewModelBase
     {
-        public ObservableCollection<Item> Items { get; set; }
+        public ObservableCollection<Produto> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
+
+        public ProdutoService ProdutoService = new ProdutoService();
 
         public ItemsViewModel()
         {
             Title = "Produtos";
-            Items = new ObservableCollection<Item>();
+            Items = new ObservableCollection<Produto>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
             //MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
@@ -30,30 +34,60 @@ namespace MobikeApp.ViewModels
             // });
         }
 
-        async Task ExecuteLoadItemsCommand()
+        public override void OnNavigatedTo(NavigationParameters parameters)
         {
             //if (IsBusy)
             //    return;
 
-            //IsBusy = true;
+            IsBusy = false;
 
-            //try
-            //{
-            //    Items.Clear();
-            //    var items = await DataStore.GetItemsAsync(true);
-            //    foreach (var item in items)
-            //    {
-            //        Items.Add(item);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    Debug.WriteLine(ex);
-            //}
-            //finally
-            //{
-            //    IsBusy = false;
-            //}
+            Task.Run(async () =>
+            {
+                try
+                {
+                    Items.Clear();
+                    var itemss = await ProdutoService.GetOne("");
+                    foreach (var item in itemss.results)
+                    {
+                        Items.Add(item);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex);
+                }
+                finally
+                {
+                    IsBusy = true;
+                }
+            });
+        }
+
+        async Task ExecuteLoadItemsCommand()
+        {
+            if (IsBusy)
+                return;
+
+            IsBusy = true;
+
+
+            try
+            {
+                Items.Clear();
+                var itemss = await ProdutoService.GetOne("");
+                foreach (var item in itemss.results)
+                {
+                    Items.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+            finally
+            {
+                IsBusy = true;
+            }
         }
     }
 }

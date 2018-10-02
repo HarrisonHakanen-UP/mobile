@@ -11,7 +11,7 @@
             <StackLayout Grid.Row="0" Padding="0" Spacing="0" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
                 <StackLayout>
                     <StackLayout.Spacing>
-                        <OnPlatform x:TypeArguments="x:Double" Android="16" iOS="32" WinPhone="12" />
+                        <OnPlatform x:TypeArguments="x:Double" Android="16" iOS="32" />
                     </StackLayout.Spacing>
                     <StackLayout.Padding>
                         <OnPlatform x:TypeArguments="Thickness" Android="32" iOS="16"/>
@@ -36,7 +36,7 @@
                     <Image WidthRequest="36" Grid.Row="0" Grid.Column="0" Source="ic_search.png">
 
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding NavigateCommand}" CommandParameter="CpfSearchPage" />
+                            <TapGestureRecognizer Command="{Binding NavigateCommand}" CommandParameter="ItemsPage" />
                         </Image.GestureRecognizers>
                     </Image>
                     <Image WidthRequest="36" Grid.Row="0" Grid.Column="1" Source="ic_folder.png">

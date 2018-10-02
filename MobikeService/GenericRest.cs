@@ -83,7 +83,8 @@ namespace RestClient
                 {
                     return await Task.Run(() =>
                     {
-                        return JsonConvert.DeserializeObject<ObservableCollection<T>>(json);
+                        var item = JsonConvert.DeserializeObject<ObservableCollection<T>>(json);
+                        return item;
                     }).ConfigureAwait(false);
                 }
             }

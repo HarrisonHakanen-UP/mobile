@@ -33,7 +33,7 @@ namespace MobikeApp
             InitializeComponent();
 
 
-             NavigationService.NavigateAsync("PasswordRecoveryPage", null, true, true);
+             NavigationService.NavigateAsync("LoginPage", null, true, true);
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
