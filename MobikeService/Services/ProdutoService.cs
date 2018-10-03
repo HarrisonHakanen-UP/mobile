@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestClient.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -9,7 +10,8 @@ namespace RestClient.Services
 {
     public class ProdutoService : GenericRest<Produtos>
     {
-        public ProdutoService() : base("https://swapi.co/api/people/", new HttpClient())
+
+        public ProdutoService() : base("http://192.168.0.100:3002/produto/listar", new HttpClient())
         {
         }
     }

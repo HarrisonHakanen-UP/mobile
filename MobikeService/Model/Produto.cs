@@ -1,37 +1,42 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace RestClient.Services
+namespace RestClient.Model
 {
 
     public class Produtos
     {
-        public int count { get; set; }
-        public string next { get; set; }
-        public object previous { get; set; }
-        public Produto[] results { get; set; }
+        public Produto[] Property1 { get; set; }
     }
 
     public class Produto
     {
-        public string name { get; set; }
-        public string height { get; set; }
-        public string mass { get; set; }
-        public string hair_color { get; set; }
-        public string skin_color { get; set; }
-        public string eye_color { get; set; }
-        public string birth_year { get; set; }
-        public string gender { get; set; }
-        public string homeworld { get; set; }
-        public string[] films { get; set; }
-        public string[] species { get; set; }
-        public string[] vehicles { get; set; }
-        public string[] starships { get; set; }
-        public DateTime created { get; set; }
-        public DateTime edited { get; set; }
-        public string url { get; set; }
+        public int produtoId { get; set; }
+        public string nome { get; set; }
+        public string numeroProduto { get; set; }
+        public int nivelEstoque { get; set; }
+        public int pontoReordenar { get; set; }
+        public int custoPadrao { get; set; }
+        public int precoVenda { get; set; }
+        public string tamanhoProduto { get; set; }
+        public string unidadeMedidaTamanho { get; set; }
+        public string unidadeMedidaPeso { get; set; }
+        public int pesoProduto { get; set; }
+        public int diasParaFabricarProduto { get; set; }
+        public string linhaDoProduto { get; set; }
+        public object classe { get; set; }
+        public object estilo { get; set; }
+        public object dataDisponivelVenda { get; set; }
+        public object dataNaoDisponivelVenda { get; set; }
+        public object dataProdutoDescontinuado { get; set; }
+        public object dataModificacao { get; set; }
+        public object[] fotos { get; set; }
+        public object[] revisaos { get; set; }
+        public object[] produtoSubCategorias { get; set; }
+        public object[] documentos { get; set; }
+        public object[] modelos { get; set; }
+        public object unidadeMedida { get; set; }
+        public string cor { get; set; }
     }
-
-
-
-
 }

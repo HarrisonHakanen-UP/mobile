@@ -1,5 +1,4 @@
 ﻿using Acr.UserDialogs;
-using MobikeApp.Models;
 using MobikeApp.Services;
 using Prism.Commands;
 using Prism.Mvvm;

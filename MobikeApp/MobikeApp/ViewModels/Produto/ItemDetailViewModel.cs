@@ -1,15 +1,15 @@
 ﻿using System;
-
-using MobikeApp.Models;
+using RestClient.Model;
+using RestClient.Services;
 
 namespace MobikeApp.ViewModels
 {
     public class ItemDetailViewModel : ViewModelBase
     {
-        public Item Item { get; set; }
-        public ItemDetailViewModel(Item item)
+        public Produto Item { get; set; }
+        public ItemDetailViewModel(Produto item)
         {
-            Title = item.Nome;
+            Title = item.nome;
             Item = item;
         }
     }

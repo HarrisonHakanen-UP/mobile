@@ -7,9 +7,9 @@ using Xamarin.Forms;
 
 using MobikeApp.ViewModels;
 using MobikeApp.Views;
-using MobikeApp.Models;
 using RestClient.Services;
 using Prism.Navigation;
+using RestClient.Model;
 
 namespace MobikeApp.ViewModels
 {
@@ -47,7 +47,7 @@ namespace MobikeApp.ViewModels
                 {
                     Items.Clear();
                     var itemss = await ProdutoService.GetOne("");
-                    foreach (var item in itemss.results)
+                    foreach (var item in itemss.Property1)
                     {
                         Items.Add(item);
                     }
@@ -75,7 +75,7 @@ namespace MobikeApp.ViewModels
             {
                 Items.Clear();
                 var itemss = await ProdutoService.GetOne("");
-                foreach (var item in itemss.results)
+                foreach (var item in itemss.Property1)
                 {
                     Items.Add(item);
                 }

@@ -8,9 +8,9 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="10">
-                                <Label Text="{Binding name}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="Large" />
-                                <Label Text="{Binding hair_color}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="Medium" />
-                                <Label Text="{Binding height}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="Medium" />
+                                <Label Text="{Binding nome}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="Large" />
+                                <Label Text="{Binding precoVenda}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="Medium" />
+                                <Label Text="{Binding pesoProduto}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="Medium" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

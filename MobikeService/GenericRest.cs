@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -11,6 +12,7 @@ using Newtonsoft.Json;
 
 namespace RestClient
 {
+    public delegate void ResultEventHandler<T>(T data);
     public class GenericRest<T> where T : class
     {
         protected string BaseUrl { get; set; }
@@ -31,12 +33,17 @@ namespace RestClient
             if (response.IsSuccessStatusCode)
             {
                 var json = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-
+#if DEBUG
+                Debug.WriteLine($"Response: {json}");
+#endif
                 if (!string.IsNullOrEmpty(json))
                 {
+                    
                     return await Task.Run(() =>
                     {
-                        return JsonConvert.DeserializeObject<T>(json);
+                        var result_ = default(T);
+                         result_ = JsonConvert.DeserializeObject<T>(json);
+                        return result_;
                     }).ConfigureAwait(false);
                 }
             }
@@ -83,8 +90,7 @@ namespace RestClient
                 {
                     return await Task.Run(() =>
                     {
-                        var item = JsonConvert.DeserializeObject<ObservableCollection<T>>(json);
-                        return item;
+                        return JsonConvert.DeserializeObject<ObservableCollection<T>>(json);
                     }).ConfigureAwait(false);
                 }
             }
