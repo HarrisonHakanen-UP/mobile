@@ -9,6 +9,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using RestClient.Model;
 
 namespace RestClient
 {
@@ -39,12 +40,13 @@ namespace RestClient
                 if (!string.IsNullOrEmpty(json))
                 {
                     
-                    return await Task.Run(() =>
-                    {
-                        var result_ = default(T);
-                         result_ = JsonConvert.DeserializeObject<T>(json);
-                        return result_;
-                    }).ConfigureAwait(false);
+                   // return await Task.Run(() =>
+                    //{
+                        var item =  JsonConvert.DeserializeObject<T>(json);
+
+                    return item;
+
+                    //}).ConfigureAwait(false);
                 }
             }
             return null;
@@ -65,10 +67,10 @@ namespace RestClient
 
                 if (!string.IsNullOrEmpty(json))
                 {
-                    return await Task.Run(() =>
-                    {
+                   // return await Task.Run(() =>
+                   // {
                         return JsonConvert.DeserializeObject<ObservableCollection<T>>(json);
-                    }).ConfigureAwait(false);
+                    //}).ConfigureAwait(false);
                 }
             }
             return result;

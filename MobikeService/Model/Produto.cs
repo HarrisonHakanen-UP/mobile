@@ -4,26 +4,20 @@ using System.Text;
 
 namespace RestClient.Model
 {
-
-    public class Produtos
-    {
-        public Produto[] Property1 { get; set; }
-    }
-
     public class Produto
     {
         public int produtoId { get; set; }
         public string nome { get; set; }
         public string numeroProduto { get; set; }
-        public int nivelEstoque { get; set; }
-        public int pontoReordenar { get; set; }
-        public int custoPadrao { get; set; }
-        public int precoVenda { get; set; }
+        public string nivelEstoque { get; set; }
+        public string pontoReordenar { get; set; }
+        public string custoPadrao { get; set; }
+        public string precoVenda { get; set; }
         public string tamanhoProduto { get; set; }
         public string unidadeMedidaTamanho { get; set; }
         public string unidadeMedidaPeso { get; set; }
-        public int pesoProduto { get; set; }
-        public int diasParaFabricarProduto { get; set; }
+        public string pesoProduto { get; set; }
+        public string diasParaFabricarProduto { get; set; }
         public string linhaDoProduto { get; set; }
         public object classe { get; set; }
         public object estilo { get; set; }
@@ -37,6 +31,7 @@ namespace RestClient.Model
         public object[] documentos { get; set; }
         public object[] modelos { get; set; }
         public object unidadeMedida { get; set; }
-        public string cor { get; set; }
+        public object cor { get; set; }
     }
+
 }

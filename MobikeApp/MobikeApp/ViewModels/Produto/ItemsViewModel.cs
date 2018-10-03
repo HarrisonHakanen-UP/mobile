@@ -15,7 +15,12 @@ namespace MobikeApp.ViewModels
 {
     public class ItemsViewModel : ViewModelBase
     {
-        public ObservableCollection<Produto> Items { get; set; }
+        private ObservableCollection<Produto> _items;
+        public ObservableCollection<Produto> Items
+        {
+            get { return _items; }
+            set { SetProperty(ref _items, value); }
+        }
         public Command LoadItemsCommand { get; set; }
 
         public ProdutoService ProdutoService = new ProdutoService();
@@ -43,23 +48,7 @@ namespace MobikeApp.ViewModels
 
             Task.Run(async () =>
             {
-                try
-                {
-                    Items.Clear();
-                    var itemss = await ProdutoService.GetOne("");
-                    foreach (var item in itemss.Property1)
-                    {
-                        Items.Add(item);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex);
-                }
-                finally
-                {
-                    IsBusy = true;
-                }
+                await GetProdutos();
             });
         }
 
@@ -69,16 +58,18 @@ namespace MobikeApp.ViewModels
                 return;
 
             IsBusy = true;
+            await GetProdutos();
 
+           
+        }
 
+        private async Task GetProdutos()
+        {
             try
             {
                 Items.Clear();
-                var itemss = await ProdutoService.GetOne("");
-                foreach (var item in itemss.Property1)
-                {
-                    Items.Add(item);
-                }
+                Items = await ProdutoService.Get("");
+               
             }
             catch (Exception ex)
             {
