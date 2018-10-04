@@ -11,11 +11,12 @@
                 HeightRequest="300"
                 Source="img.jpg"/>
             <Label Text="Nome:" FontSize="Medium" />
-            <Label Text="{Binding Item.Nome}" FontSize="Small" />
-            <Label Text="Descricao:" FontSize="Medium" />
-            <Label Text="{Binding Item.Descricao}" FontSize="Small" />
-            <Label Text="Valor:" FontSize="Medium" />
-            <Label Text="{Binding Item.Valor}" FontSize="Small" />
+            <Label Text="{Binding Item.nome}" FontSize="Small" />
+            <Label Text="Numero:" FontSize="Medium" />
+            <Label Text="{Binding Item.numeroProduto}" FontSize="Small" />
+            <Label Text="Preço:" FontSize="Medium" />
+
+            <Label Text="{Binding Item.precoVenda}" FontSize="Small" />
 
             <Label Margin="10" Text="Freio A Disco Shimano Hidráulico Br-m575 Preto Melhor M446" HorizontalOptions="CenterAndExpand" FontAttributes="Italic, Bold"  FontSize="Large" TextColor="#0288D1"/>
         </StackLayout>
