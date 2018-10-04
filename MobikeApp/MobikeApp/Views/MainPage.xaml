@@ -41,15 +41,15 @@
                     </Image>
                     <Image WidthRequest="36" Grid.Row="0" Grid.Column="1" Source="ic_folder.png">
 
-                        <Image.GestureRecognizers>
+                        <!--<Image.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding NavigateCommand}" CommandParameter="WalletsPage" />
-                        </Image.GestureRecognizers>
+                        </Image.GestureRecognizers>-->
                     </Image>
                     <Image WidthRequest="36"  Grid.Row="0" Grid.Column="2" Source="ic_map.png">
 
-                        <Image.GestureRecognizers>
+                        <!--<Image.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding NavigateCommand}" CommandParameter="ProximityPage" />
-                        </Image.GestureRecognizers>
+                        </Image.GestureRecognizers>-->
                     </Image>
 
                 </Grid>

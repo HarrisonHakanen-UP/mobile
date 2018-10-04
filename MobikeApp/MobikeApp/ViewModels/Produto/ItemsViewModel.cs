@@ -10,11 +10,14 @@ using MobikeApp.Views;
 using RestClient.Services;
 using Prism.Navigation;
 using RestClient.Model;
+using Prism.Commands;
 
 namespace MobikeApp.ViewModels
 {
     public class ItemsViewModel : ViewModelBase
     {
+        private readonly INavigationService _navigationService;
+
         private ObservableCollection<Produto> _items;
         public ObservableCollection<Produto> Items
         {
@@ -23,20 +26,27 @@ namespace MobikeApp.ViewModels
         }
         public Command LoadItemsCommand { get; set; }
 
+        public DelegateCommand<Produto> SelectedItem { get; set; }
+
         public ProdutoService ProdutoService = new ProdutoService();
 
-        public ItemsViewModel()
+        public ItemsViewModel(INavigationService navigationService)
         {
+            _navigationService = navigationService;
             Title = "Produtos";
             Items = new ObservableCollection<Produto>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+            SelectedItem = new DelegateCommand<Produto>(ExecuteSelectedItem);
 
-            //MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
-            // {
-            //     var _item = item as Item;
-            //     Items.Add(_item);
-            //     await DataStore.AddItemAsync(_item);
-            // });
+        }
+
+        private async void ExecuteSelectedItem(Produto obj)
+        {
+            var navigateParam = new NavigationParameters()
+                        {
+                            { "Produto", obj },
+                        };
+            await _navigationService.NavigateAsync("ItemDetailPage", navigateParam, true, true);
         }
 
         public override void OnNavigatedTo(NavigationParameters parameters)
@@ -60,7 +70,7 @@ namespace MobikeApp.ViewModels
             IsBusy = true;
             await GetProdutos();
 
-           
+
         }
 
         private async Task GetProdutos()
@@ -69,7 +79,7 @@ namespace MobikeApp.ViewModels
             {
                 Items.Clear();
                 Items = await ProdutoService.Get("");
-               
+
             }
             catch (Exception ex)
             {

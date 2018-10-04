@@ -18,12 +18,7 @@
                 </Grid.RowDefinitions>
                 <!-- header -->
                 <StackLayout Grid.Row="0" Padding="0" Spacing="0" HorizontalOptions="CenterAndExpand">
-                    <StackLayout.Spacing>
-                        <OnPlatform x:TypeArguments="x:Double" Android="16" iOS="32" />
-                    </StackLayout.Spacing>
-                    <StackLayout.Padding>
-                        <OnPlatform x:TypeArguments="Thickness" Android="32" iOS="16" />
-                    </StackLayout.Padding>
+                    
                 </StackLayout>
                 <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Source="teto" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Aspect="AspectFill" />
                 <StackLayout Grid.Row="1" Spacing="16" Padding="0" HorizontalOptions="StartAndExpand">

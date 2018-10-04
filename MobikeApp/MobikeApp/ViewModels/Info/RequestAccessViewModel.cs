@@ -41,7 +41,12 @@ namespace MobikeApp.ViewModels
             CancelCommand = new DelegateCommand(async () => await _navigationService.NavigateAsync("LoginPage", null, true, true));
             //RequestAccessCommand = new DelegateCommand(ExecuteRequestAccessCommand);
         }
-
+        public override void OnNavigatedTo(NavigationParameters parameters)
+        {
+            
+            Email = parameters["Cpf"].ToString();
+            Cpf = parameters["Pass"].ToString();
+        }
         //public async void ExecuteRequestAccessCommand()
         //{
         //    if (CrossConnectivity.Current.IsConnected)

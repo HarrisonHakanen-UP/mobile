@@ -1,4 +1,5 @@
-﻿using Prism.Commands;
+﻿using System;
+using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
 
@@ -46,15 +47,25 @@ namespace MobikeApp.ViewModels
             _pageDialogService = pageDialogService;
 
             LoginCommand = new DelegateCommand(ExecuteDoLogin, CanNavigate).ObservesProperty(() => IsBusy);
-            RequestAccessCommand = new DelegateCommand(async () => await _navigationService.NavigateAsync("RequestAccessPage", null, true, true));
-          
+            RequestAccessCommand = new DelegateCommand(ExecuteRequestAcess, CanNavigate).ObservesProperty(() => IsBusy);
+            PasswordRecoveryCommand = new DelegateCommand(async () => await _navigationService.NavigateAsync("PasswordRecoveryPage", null, true, true));
         }
 
-
+        private async void ExecuteRequestAcess()
+        {
+            var navigateParam = new NavigationParameters()
+                        {
+                            { "Cpf", Cpf },
+                            { "Pass", Password }
+                        };
+            await _navigationService.NavigateAsync("RequestAccessPage", navigateParam, true, true);
+        }
 
         private async void ExecuteDoLogin()
         {
             await _navigationService.NavigateAsync("MainPage", null, true, true);
         }
+
+
     }
 }
