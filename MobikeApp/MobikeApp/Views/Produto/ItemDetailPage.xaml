@@ -4,11 +4,35 @@
              x:Class="MobikeApp.Views.ItemDetailPage" 
              Title="{Binding Title}">
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="Nome:" FontSize="Medium" />
-        <Label Text="{Binding Item.Nome}" FontSize="Small" />
-        <Label Text="Descricao:" FontSize="Medium" />
-        <Label Text="{Binding Item.Descricao}" FontSize="Small" />
-        <Label Text="Valor:" FontSize="Medium" />
-        <Label Text="{Binding Item.Valor}" FontSize="Small" />
+        <StackLayout >
+            <Image  
+                  
+                WidthRequest="200"
+                HeightRequest="300"
+                Source="img.jpg"/>
+            <Label Text="Nome:" FontSize="Medium" />
+            <Label Text="{Binding Item.Nome}" FontSize="Small" />
+            <Label Text="Descricao:" FontSize="Medium" />
+            <Label Text="{Binding Item.Descricao}" FontSize="Small" />
+            <Label Text="Valor:" FontSize="Medium" />
+            <Label Text="{Binding Item.Valor}" FontSize="Small" />
+
+            <Label Margin="10" Text="Freio A Disco Shimano Hidráulico Br-m575 Preto Melhor M446" HorizontalOptions="CenterAndExpand" FontAttributes="Italic, Bold"  FontSize="Large" TextColor="#0288D1"/>
+        </StackLayout>
+
+        <StackLayout Padding="13,5" >
+            <Label  Text="Ótima relação custo x benefício para quem busca por um freio eficiente e de qualidade sem gastar muito. 
+
+As manetes do freio a disco vem com o regulador (chave allen) de curso na pegada da manete para aproximar ou distanciar a manete do guidão. 
+
+Mesmo sistema de aplicação da frenagem (Servo Wave) dos freios XTR, XT, SAINT e SLX também foi inserida no novo Deore.
+
+Manete tamanho médio (2 dedos) " HorizontalOptions="CenterAndExpand" FontAttributes="Italic, Bold"  FontSize="Large" TextColor="#0288D1"/>
+
+        </StackLayout>
+        <Button Text="Comprar" Command="{Binding Comprar}" HorizontalOptions="FillAndExpand" TextColor="White" HeightRequest="46" BackgroundColor="#0288D1"/>
+        <Button Text="Voltar" Command="{Binding Voltar}" HorizontalOptions="FillAndExpand" TextColor="White" HeightRequest="46" BackgroundColor="#0288D1"/>
+
     </StackLayout>
+
 </ContentPage>
